@@ -25,7 +25,7 @@
                 $compile($element.contents())($scope);
             });
 
-            this.update = (newNote) => {
+            this.update = newNote => {
                 console.log('update', newNote);
                 this.note = newNote;
             };
