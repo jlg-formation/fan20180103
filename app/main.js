@@ -1,12 +1,12 @@
 (function () {
     'use strict';
 
-    var app = angular.module('main', ['eco-layout']);
+    var app = angular.module('main', ['eco-layout', 'eco-star']);
 
     app.run(($rootScope) => {
         $rootScope.name = 'Jean-Louis';
 
-        $rootScope.hello = function() {
+        $rootScope.hello = () => {
             console.log('hello');
         };
     });

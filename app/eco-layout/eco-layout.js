@@ -5,7 +5,6 @@
 
     app.component('ecoHeader', {
         templateUrl: 'eco-layout/tmpl/eco-header.html',
-
     });
 
     app.component('ecoBody', {
@@ -13,10 +12,11 @@
             myFn: '&',
             n: '=',
         },
-        controller: function EcoBodyCtrl() {
-            this.$onInit = () => {
+        controller: class EcoBodyCtrl {
+            $onInit() {
+                console.log('controller', this);
                 this.myFn();
-            };
+            }
         },
         templateUrl: 'eco-layout/tmpl/eco-body.html',
     });
