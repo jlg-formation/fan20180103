@@ -1,4 +1,4 @@
-// const webpack = require('webpack');
+const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -42,6 +42,9 @@ module.exports = {
 	// devtool: 'source-map',
 	plugins: [
 		new ExtractTextPlugin('[name].css'),
+		new webpack.optimize.UglifyJsPlugin({
+			sourceMap: true,
+		}),
 		// comment this if you do not need jQuery.
 		// new webpack.ProvidePlugin({
 		// 	$: 'jquery',
