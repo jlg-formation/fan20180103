@@ -5,6 +5,11 @@
 
     app.component('ecoStar', {
        template: 'kiki',
+       controller: class EcoStar {
+           $onInit() {
+               console.log('ecostar init');
+           }
+       }
     });
 
   
