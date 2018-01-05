@@ -7,6 +7,13 @@ body {
         menu {
             display: block;
             item {
+                a {
+                    display: block;
+                    text-decoration: none;
+                    color: black;
+                    height: 100%;
+                    width: 100%;
+                }
                 display: inline-block;
                 height: 3rem;
                 background-color: hsl(120, 100%, 50%);

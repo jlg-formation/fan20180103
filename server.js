@@ -14,8 +14,15 @@ const compiler = webpack(webpackConfig);
 app.use('/app/wpk/', webpackDevMiddleware(compiler, {}));
 
 app.use(express.static('.'));
-app.use(serveIndex('.', { icons: true }));
+app.use(serveIndex('.', {
+	icons: true
+}));
 
+app.use('/app/', (req, res) => {
+	res.sendFile('./app/index.html', {
+		root: '.'
+	});
+});
 app.use(function (req, res, next) {
 	console.log('404: Page not Found', req.url);
 	next();

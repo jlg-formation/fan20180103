@@ -6,8 +6,10 @@ import servicesHtml from './tmpl/services.html';
 import contactHtml from './tmpl/contact.html';
 
 
-app.config(function ($locationProvider, $stateProvider) {
+app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
     $locationProvider.html5Mode(true);
+
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider.state({
         name: 'home',
