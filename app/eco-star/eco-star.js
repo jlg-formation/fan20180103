@@ -9,7 +9,6 @@
         },
         controller: function EcoStarCtrl($scope, $element, $compile) {
             $scope.$watch('$ctrl.note', () => {
-                console.log('ecostar init');
                 let note = this.note || 3;
                 note = (note > 5) ? 5 : note;
                 note = (note < 0) ? 0 : note;
