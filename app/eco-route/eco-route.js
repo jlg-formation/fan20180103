@@ -19,7 +19,9 @@ app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
     $stateProvider.state({
         name: 'products',
         url: '/products',
-        template: productsHtml
+        template: productsHtml,
+        controller: ProductCtrl,
+        controllerAs: '$ctrl'
     });
     $stateProvider.state({
         name: 'services',
@@ -32,3 +34,29 @@ app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
         template: contactHtml
     });
 });
+
+function ProductCtrl($http, $q) {
+    'ngInject';
+
+    this.start = () => {
+        console.log('start');
+        $http.get('../ws/s1').then(response => {
+            console.log('response', response);
+            return $q.all([
+                $http.get('../ws/s2').then(response => {
+                    console.log('response', response);
+                    return $http.get('../ws/s5')
+                }),
+                $http.get('../ws/s3'),
+                $http.get('../ws/s4'),
+            ]);
+        }).then(responses => {
+            console.log('responses', responses);
+            return $http.get('../ws/s6');
+        }).then(response => {
+            console.log('response', response);            
+        }).catch(error => {
+            console.error('error', error);
+        });
+    };
+}
