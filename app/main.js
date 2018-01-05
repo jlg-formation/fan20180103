@@ -3,7 +3,10 @@ import './eco-star/eco-star.js';
 
 import './style.scss';
 
-const app = angular.module('main', ['eco-layout', 'eco-star']);
+const app = angular.module('main', [
+    'eco-layout',
+    'eco-star'
+]);
 
 app.run(($rootScope) => {
     $rootScope.name = 'Jean-Louis';
@@ -12,4 +15,3 @@ app.run(($rootScope) => {
         console.log('hello');
     };
 });
-

@@ -2,6 +2,8 @@ $bgcolor: yellow;
 
 body {
     eco-header {
+        display: block;
+        height: 3rem;
         background-color: $bgcolor;
     }
     eco-body {
