@@ -1,12 +1,37 @@
 $bgcolor: hsl(120, 100%, 90%);
-
 body {
     eco-header {
         display: block;
         height: 3rem;
         background-color: $bgcolor;
+        menu {
+            display: block;
+            item {
+                display: inline-block;
+                height: 3rem;
+                background-color: hsl(120, 100%, 50%);
+                line-height: 3rem;
+                padding: 0 1rem;
+                &:hover {
+                    background-color: hsl(120, 100%, 40%);
+                }
+                &:active {
+                    background-color: hsl(120, 100%, 30%);
+                    
+                }
+                &.active {
+                    background-color: hsl(240, 100%, 50%);
+                }
+            }
+        }
     }
     eco-body {
-        background-color: yellow;
+        display: block;
+        background-color: white;
+    }
+
+    eco-footer {
+        display: block;
+        background-color: gray;
     }
 }
