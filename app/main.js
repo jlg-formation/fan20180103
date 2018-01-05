@@ -1,15 +1,15 @@
-(function () {
-    'use strict';
+import './eco-layout/eco-layout.js';
+import './eco-star/eco-star.js';
 
-    const app = angular.module('main', ['eco-layout', 'eco-star']);
+import './style.scss';
 
-    app.run(($rootScope) => {
-        $rootScope.name = 'Jean-Louis';
+const app = angular.module('main', ['eco-layout', 'eco-star']);
 
-        $rootScope.hello = () => {
-            console.log('hello');
-        };
-    });
+app.run(($rootScope) => {
+    $rootScope.name = 'Jean-Louis';
 
-    
-})();
+    $rootScope.hello = () => {
+        console.log('hello');
+    };
+});
+

@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: {
+		vendors: './app/vendors.js',
 		bundle: './app/main.js',
 	},
 	output: {
@@ -39,12 +40,13 @@ module.exports = {
 			}],
 		}]
 	},
-	// devtool: 'source-map',
+	devtool: 'source-map',
 	plugins: [
 		new ExtractTextPlugin('[name].css'),
 		new webpack.optimize.UglifyJsPlugin({
 			sourceMap: true,
 		}),
+		new webpack.optimize.CommonsChunkPlugin('vendors'),
 		// comment this if you do not need jQuery.
 		// new webpack.ProvidePlugin({
 		// 	$: 'jquery',
