@@ -1,27 +1,27 @@
-(function () {
-    'use strict';
+const app = angular.module('eco-layout', []);
 
-    const app = angular.module('eco-layout', []);
+import ecoHeaderHtml from './tmpl/eco-header.html';
+import ecoBodyHtml from './tmpl/eco-body.html';
+import ecoFooterHtml from './tmpl/eco-footer.html';
 
-    app.component('ecoHeader', {
-        templateUrl: 'eco-layout/tmpl/eco-header.html',
-    });
+app.component('ecoHeader', {
+    template: ecoHeaderHtml,
+});
 
-    app.component('ecoBody', {
-        bindings: {
-            myFn: '&',
-            n: '=',
-        },
-        controller: class EcoBodyCtrl {
-            $onInit() {
-                console.log('controller', this);
-                this.myFn();
-            }
-        },
-        templateUrl: 'eco-layout/tmpl/eco-body.html',
-    });
+app.component('ecoBody', {
+    bindings: {
+        myFn: '&',
+        n: '=',
+    },
+    controller: class EcoBodyCtrl {
+        $onInit() {
+            console.log('controller', this);
+            this.myFn();
+        }
+    },
+    template: ecoBodyHtml,
+});
 
-    app.component('ecoFooter', {
-        templateUrl: 'eco-layout/tmpl/eco-footer.html',
-    });
-})();
+app.component('ecoFooter', {
+    template: ecoFooterHtml,
+});
